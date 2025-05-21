@@ -34,7 +34,8 @@ int main(int argc, const char* argv[]) {
   SimpleVector<num_t> op;
   std::cin >> op;
   assert(1 < op.size());
-  for(myuint i(0); i < (myuint(1) << (op.size() - 1)); i ++) {
+  for(myuint i((myuint(1) << (op.size() - 1)) | myuint(1));
+    i < (myuint(1) << op.size()); i ++) {
     num_t lop(int(0));
     for(int j = 0; j < op.size(); j ++)
       if(i & (j ? myuint(1) << j : myuint(1)))
@@ -45,7 +46,7 @@ int main(int argc, const char* argv[]) {
       return 0;
     }
   }
-  std::cout << "OK : this is nonzero 0 vector." << std::endl;
+  std::cout << "OK : this is NOT nonzero 0 vector." << std::endl;
   return 0;
 }
 
