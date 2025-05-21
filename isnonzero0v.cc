@@ -46,7 +46,7 @@ int main(int argc, const char* argv[]) {
       return 0;
     }
   }
-  std::cout << "OK : this is NOT nonzero 0 vector." << std::endl;
+  std::cout << "OK : this is nonzero 0 vector." << std::endl;
   return 0;
 }
 
